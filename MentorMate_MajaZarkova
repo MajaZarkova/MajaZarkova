@@ -1,0 +1,61 @@
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            int pipeCount = n;
+            int pipeMidle = n * 2;
+            int startCount = n;
+            int pipeCenter = n;
+            for (int i = 0; i < n / 2 + 1; i++)
+            {
+                Console.Write(new String('-', pipeCount));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeCenter));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeMidle));
+
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeCenter));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeCount));
+                Console.WriteLine();
+
+                pipeCount--;
+                startCount += 2;
+                pipeCenter -= 2;
+                pipeMidle -= 2;
+            }
+
+            int starMiddle = n * 2 - 1;
+            startCount = n;
+            int pipeMiddleDown = 1;
+            for (int i = 0; i < n / 2 + 1; i++)
+            {
+                Console.Write(new String('-', pipeCount));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeMiddleDown));
+                Console.Write(new String('*', starMiddle));
+                Console.Write(new String('-', pipeMiddleDown));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeMidle));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeMiddleDown));
+                Console.Write(new String('*', starMiddle));
+                Console.Write(new String('-', pipeMiddleDown));
+                Console.Write(new String('*', startCount));
+                Console.Write(new String('-', pipeCount));
+
+                Console.WriteLine();
+
+                pipeCount--;
+                pipeMidle -= 2;
+                pipeMiddleDown +=2;
+                starMiddle -= 2;
+            }
+
+
+        }
+                
+        
+    }
